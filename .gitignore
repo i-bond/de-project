@@ -1,0 +1,36 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+.idea/
+log/
+venv/
+credentials/
+
+
+# DataBases
+*.sqlite3
+*.db
+
+# Scrapy stuff:
+.scrapy
+
+# Environments
+.env
+.ven
+
+# Media
+*.jpg
+*.png
+
+# Data
+*.json
+*.csv
+*.txt
+
+
+
+# Do Not Ignore
+!requirements.txt
+
+
+
+
