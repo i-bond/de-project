@@ -1,7 +1,0 @@
-apache-airflow-providers-google
-pyarrow
-pandas
-numpy
-sqlalchemy
-kaggle
-psycopg2-binary

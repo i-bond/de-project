@@ -47,6 +47,8 @@ x-airflow-common:
   build:
     context: . # path to Dockerfile to build an image from
     dockerfile: ./Dockerfile
+#  env_file:
+#    .env
   environment:
     &airflow-common-env
     AIRFLOW__CORE__EXECUTOR: CeleryExecutor
@@ -62,6 +64,8 @@ x-airflow-common:
     AIRFLOW_CONN_GOOGLE_CLOUD_DEFAULT: 'google-cloud-platform://?extra__google_cloud_platform__key_path=/.google/credentials/google_credentials.json'
     GCP_PROJECT_ID: 'de-zoomcamp-10'
     GCP_GCS_BUCKET: "de_zoomcamp"
+
+
 
     # set env vars for postgres, downloaded from .env
 #    PG_HOST: "${PG_HOST}"
@@ -142,6 +146,7 @@ services:
         condition: service_completed_successfully
 
   airflow-worker:
+    image: de_airflow_airflow-worker:saved
     <<: *airflow-common
     command: celery worker
     healthcheck:
@@ -289,12 +294,20 @@ volumes:
   postgres-db-volume:
 
 
-# cd data_pipeline/airflow
-# docker-compose --project-name de-project
-# docker-compose build
-# docker-compose up airflow-init # optional
-# docker-compose up
-# docker-compose down --volumes --rmi all
+
+# kaggle competitions list
 
 # view env variables
 # docker-compose --env-file .env config
+
+
+# CONNECT
+# docker exec -it de_airflow_airflow-worker_1 bash
+# CONNECT AS ROOT
+# docker exec -u 0 -it de_airflow_airflow-worker_1 bash
+
+
+# Kaggle CLI
+# kaggle datasets download -h
+# kaggle datasets download -p /opt/airflow -d netflix-inc/netflix-prize-data
+# kaggle datasets download -p /opt/airflow --unzip -d netflix-inc/netflix-prize-data

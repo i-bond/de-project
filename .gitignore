@@ -26,6 +26,8 @@ credentials/
 *.csv
 *.txt
 
+#Airflow
+*.log
 
 
 # Do Not Ignore

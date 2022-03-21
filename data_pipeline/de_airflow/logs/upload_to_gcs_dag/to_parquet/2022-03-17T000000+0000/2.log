@@ -1,0 +1,45 @@
+[2022-03-18 06:50:12,758] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: upload_to_gcs_dag.to_parquet scheduled__2022-03-17T00:00:00+00:00 [queued]>
+[2022-03-18 06:50:12,784] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: upload_to_gcs_dag.to_parquet scheduled__2022-03-17T00:00:00+00:00 [queued]>
+[2022-03-18 06:50:12,784] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-18 06:50:12,785] {taskinstance.py:1239} INFO - Starting attempt 2 of 2
+[2022-03-18 06:50:12,785] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-18 06:50:13,006] {taskinstance.py:1259} INFO - Executing <Task(PythonOperator): to_parquet> on 2022-03-17 00:00:00+00:00
+[2022-03-18 06:50:13,014] {standard_task_runner.py:52} INFO - Started process 3141 to run task
+[2022-03-18 06:50:13,020] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'upload_to_gcs_dag', 'to_parquet', 'scheduled__2022-03-17T00:00:00+00:00', '--job-id', '8', '--raw', '--subdir', 'DAGS_FOLDER/upload_to_gcs_dag.py', '--cfg-path', '/tmp/tmp17r0vebl', '--error-file', '/tmp/tmpv9c0g_f8']
+[2022-03-18 06:50:13,036] {standard_task_runner.py:77} INFO - Job 8: Subtask to_parquet
+[2022-03-18 06:50:14,041] {logging_mixin.py:109} INFO - Running <TaskInstance: upload_to_gcs_dag.to_parquet scheduled__2022-03-17T00:00:00+00:00 [running]> on host 18814760df26
+[2022-03-18 06:50:14,406] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=upload_to_gcs_dag
+AIRFLOW_CTX_TASK_ID=to_parquet
+AIRFLOW_CTX_EXECUTION_DATE=2022-03-17T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-03-17T00:00:00+00:00
+[2022-03-18 06:54:11,598] {local_task_job.py:212} WARNING - State of this instance has been externally set to failed. Terminating instance.
+[2022-03-18 06:54:11,603] {process_utils.py:124} INFO - Sending Signals.SIGTERM to group 3141. PIDs of all processes in the group: [3141]
+[2022-03-18 06:54:11,604] {process_utils.py:75} INFO - Sending the signal Signals.SIGTERM to group 3141
+[2022-03-18 06:54:11,691] {taskinstance.py:1408} ERROR - Received SIGTERM. Terminating subprocesses.
+[2022-03-18 06:54:12,059] {process_utils.py:70} INFO - Process psutil.Process(pid=3141, status='terminated', exitcode=0, started='06:50:12') (3141) terminated with exit code 0
+[2022-03-18 09:52:58,042] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: upload_to_gcs_dag.to_parquet scheduled__2022-03-17T00:00:00+00:00 [queued]>
+[2022-03-18 09:52:58,299] {taskinstance.py:1032} INFO - Dependencies all met for <TaskInstance: upload_to_gcs_dag.to_parquet scheduled__2022-03-17T00:00:00+00:00 [queued]>
+[2022-03-18 09:52:58,300] {taskinstance.py:1238} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-18 09:52:58,300] {taskinstance.py:1239} INFO - Starting attempt 2 of 2
+[2022-03-18 09:52:58,301] {taskinstance.py:1240} INFO - 
+--------------------------------------------------------------------------------
+[2022-03-18 09:52:58,640] {taskinstance.py:1259} INFO - Executing <Task(PythonOperator): to_parquet> on 2022-03-17 00:00:00+00:00
+[2022-03-18 09:52:58,646] {standard_task_runner.py:52} INFO - Started process 491 to run task
+[2022-03-18 09:52:58,650] {standard_task_runner.py:76} INFO - Running: ['***', 'tasks', 'run', 'upload_to_gcs_dag', 'to_parquet', 'scheduled__2022-03-17T00:00:00+00:00', '--job-id', '5', '--raw', '--subdir', 'DAGS_FOLDER/upload_to_gcs_dag.py', '--cfg-path', '/tmp/tmprnbefzfa', '--error-file', '/tmp/tmp_phqemmv']
+[2022-03-18 09:52:58,651] {standard_task_runner.py:77} INFO - Job 5: Subtask to_parquet
+[2022-03-18 09:52:58,881] {logging_mixin.py:109} INFO - Running <TaskInstance: upload_to_gcs_dag.to_parquet scheduled__2022-03-17T00:00:00+00:00 [running]> on host 777e2f1225f4
+[2022-03-18 09:52:59,349] {taskinstance.py:1426} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_OWNER=***
+AIRFLOW_CTX_DAG_ID=upload_to_gcs_dag
+AIRFLOW_CTX_TASK_ID=to_parquet
+AIRFLOW_CTX_EXECUTION_DATE=2022-03-17T00:00:00+00:00
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-03-17T00:00:00+00:00
+[2022-03-18 09:57:04,937] {python.py:175} INFO - Done. Returned value was: None
+[2022-03-18 09:57:05,010] {taskinstance.py:1277} INFO - Marking task as SUCCESS. dag_id=upload_to_gcs_dag, task_id=to_parquet, execution_date=20220317T000000, start_date=20220318T095258, end_date=20220318T095705
+[2022-03-18 09:57:05,563] {local_task_job.py:154} INFO - Task exited with return code 0
+[2022-03-18 09:57:05,848] {local_task_job.py:264} INFO - 0 downstream tasks scheduled from follow-on schedule check
