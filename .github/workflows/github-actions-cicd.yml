@@ -43,7 +43,7 @@ jobs:
                   else
                     echo "$CRED_DIR does not exist, creating ..."
                     mkdir $CRED_DIR
-                    echo ${{ secrets.GOOGLE_CREDENTIALS }} > $CRED_DIR/google_credentials.json
+                    echo "${{ secrets.GOOGLE_CREDENTIALS }}" > $CRED_DIR/google_credentials.json
                   fi
 
 
