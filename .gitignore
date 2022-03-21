@@ -27,6 +27,7 @@ credentials/
 *.txt
 
 #Airflow
+logs/
 *.log
 
 
