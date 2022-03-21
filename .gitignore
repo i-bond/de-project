@@ -29,7 +29,6 @@ credentials/
 #Airflow
 logs/
 *.log
-commands.py
 
 # Do Not Ignore
 !requirements.txt
