@@ -27,8 +27,8 @@ credentials/
 *.txt
 
 #Airflow
-logs/
-*.log
+#logs/
+#*.log
 
 
 # Do Not Ignore
