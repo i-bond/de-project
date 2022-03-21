@@ -141,22 +141,9 @@ with DAG(
                 }
     )
 
-    # for FILE in FILE_NAMES:
-    #     load_to_gcs = PythonOperator(
-    #         task_id=f"upload_{FILE}_netflix",
-    #         python_callable=upload_to_gcs,
-    #         op_kwargs={
-    #             "bucket": BUCKET,
-    #             "object_name": f"de_project/{FILE}.parquet",
-    #             "local_file": f"{AIRFLOW_HOME}/{FILE}.parquet",
-    #         },
-    #     )
 
 
 kaggle_download >> to_csv >> to_parquet >> clear_space >> load_to_gcs
-
-
-
 
 # docker exec -it de_airflow_airflow-worker_1 bash
 # airflow tasks test upload_to_gcs_dag kaggle_download 2022-03-01 && airflow tasks test upload_to_gcs_dag to_csv 2022-03-01
