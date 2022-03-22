@@ -293,9 +293,10 @@ services:
 volumes:
   postgres-db-volume:
 
-# SOME INFO HERE
 
-# kaggle competitions list
+
+
+
 
 # view env variables
 # docker-compose --env-file .env config

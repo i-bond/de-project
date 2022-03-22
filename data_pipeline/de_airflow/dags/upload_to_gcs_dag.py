@@ -19,7 +19,7 @@ PROJECT_ID = os.environ.get("GCP_PROJECT_ID")
 BUCKET = os.environ.get("GCP_GCS_BUCKET")
 AIRFLOW_HOME = os.environ.get("AIRFLOW_HOME", "/opt/airflow/")
 KAGGLE_JSON = os.environ.get("KAGGLE_JSON")
-
+BIGQUERY_DATASET = os.environ.get("BIGQUERY_DATASET", 'netflix_dataset')
 
 def convert_to_csv(path, files):
     for file in files:
@@ -140,9 +140,25 @@ with DAG(
                 }
     )
 
+    for parquet_file in ['combined_data_1', 'combined_data_2', 'combined_data_3', 'combined_data_4', 'movie_titles']:
+       bigquery_external_table_task = BigQueryCreateExternalTableOperator(  # extract schema and create BigQuery Table
+            task_id=f"bigquery_external_{parquet_file}",
+            table_resource={
+                "externalDataConfiguration": {
+                    "sourceFormat": "PARQUET",
+                    "sourceUris": [f"gs://{BUCKET}/de_project/{parquet_file}.parquet"],
+                },
+                "tableReference": {
+                    "projectId": PROJECT_ID,
+                    "datasetId": BIGQUERY_DATASET,
+                    "tableId": f"external_{parquet_file}",
+                },
+            },
+        )
 
 
-kaggle_download >> to_csv >> to_parquet >> clear_space >> load_to_gcs
+
+kaggle_download >> to_csv >> to_parquet >> clear_space >> load_to_gcs >> bigquery_external_table_task
 
 # docker exec -it de_airflow_airflow-worker_1 bash
 # airflow tasks test upload_to_gcs_dag kaggle_download 2022-03-01 && airflow tasks test upload_to_gcs_dag to_csv 2022-03-01

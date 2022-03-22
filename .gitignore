@@ -31,6 +31,9 @@ logs/
 *.log
 commands.py
 
+# Terraform
+terraform/
+
 # Do Not Ignore
 !requirements.txt
 

@@ -47,8 +47,6 @@ RUN jo -p username=$KAGGLE_NAME key=$KAGGLE_KEY > kaggle.json \
 COPY scripts scripts
 RUN chmod +x scripts
 
-EXPOSE 8080 5555 8793
-
 WORKDIR $AIRFLOW_HOME
 USER $AIRFLOW_UID
 
