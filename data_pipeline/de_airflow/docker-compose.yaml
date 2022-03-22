@@ -146,7 +146,7 @@ services:
         condition: service_completed_successfully
 
   airflow-worker:
-    image: de_airflow_airflow-worker:saved
+#    image: de_airflow_airflow-worker:saved # test
     <<: *airflow-common
     command: celery worker
     healthcheck:

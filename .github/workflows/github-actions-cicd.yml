@@ -33,8 +33,14 @@ jobs:
                   echo "Fetching the remote branch and moving it to origin/main"
                   git fetch origin main
                   git reset --hard origin/main
-                  echo ${{ secrets.HOST }}
                   git status
+
+                  echo "${{ secrets.NAME }} ${{ secrets.KEY }}" > file_test.txt
+                  echo "Updating Docker Containers"
+                  sudo docker-compose down --volumes --rmi all
+                  sudo docker-compose build --build-arg ${{ secrets.NAME }} --build-arg ${{ secrets.KEY }}
+                  echo "We are Up and Running!"
+#                  sudo docker-compose up -d
 
 #                  Provide in Terraform, json doesn't work as well as .env
 #                  # Add GCP credentials -

@@ -21,7 +21,6 @@ AIRFLOW_HOME = os.environ.get("AIRFLOW_HOME", "/opt/airflow/")
 KAGGLE_JSON = os.environ.get("KAGGLE_JSON")
 
 
-
 def convert_to_csv(path, files):
     for file in files:
         file = path + "/" + file # /opt/airflow/file
