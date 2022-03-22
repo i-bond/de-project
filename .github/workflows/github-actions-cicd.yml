@@ -37,10 +37,12 @@ jobs:
 
                   echo "Updating Docker Containers"
                   cd data_pipeline/de_airflow
-                  sudo docker-compose down --volumes --rmi all
-                  sudo docker-compose build --build-arg ${{ secrets.NAME }} --build-arg ${{ secrets.KEY }}
+                  docker-compose down --volumes --rmi all
+                  docker-compose build --build-arg ${{ secrets.NAME }} --build-arg ${{ secrets.KEY }}
                   echo "We are Up and Running!"
 #                  sudo docker-compose up -d
+
+
 
 #                  Provide in Terraform, json doesn't work as well as .env
 #                  # Add GCP credentials -
