@@ -32,7 +32,7 @@ jobs:
                   cd de-project
                   echo "Fetching the remote branch and moving it to origin/main"
                   git fetch origin main
-                  git reset --hard origin/main
+                  sudo git reset --hard origin/main
                   git status
 
                   echo "Updating Docker Containers"
