@@ -8,7 +8,7 @@ from airflow.operators.python import PythonOperator
 from airflow.utils.task_group import TaskGroup
 
 from google.cloud import storage
-from airflow.providers.google.cloud.operators.bigquery import BigQueryCreateExternalTableOperator
+from airflow.providers.google.cloud.operators.bigquery import BigQueryCreateExternalTableOperator, BigQueryInsertJobOperator
 import pyarrow.csv as pv
 import pyarrow.parquet as pq
 from datetime import datetime
@@ -142,14 +142,6 @@ with DAG(
     )
 
     with TaskGroup("create_external_tables") as external_tables:
-        # task_2 = BashOperator(
-        #     task_id="task_2",
-        #     bash_command='sleep 2'
-        # )
-        # task_3 = BashOperator(
-        #     task_id="task_3",
-        #     bash_command='sleep 3'
-        # )
         for parquet_file in ['combined_data_1', 'combined_data_2', 'combined_data_3', 'combined_data_4', 'movie_titles']:
            bigquery_external_table_task = BigQueryCreateExternalTableOperator(  # extract schema and create BigQuery Table
                task_id=f"bigquery_external_{parquet_file}",
@@ -166,27 +158,26 @@ with DAG(
                },
           )
 
+    with TaskGroup("create_optimized_tables") as optimize_tables:
+        for table in ['combined_data_1', 'combined_data_2', 'combined_data_3', 'combined_data_4']:
+            CREATE_BQ_TBL_QUERY = (
+                f"CREATE OR REPLACE TABLE {BIGQUERY_DATASET}.optimized_{table} \
+                  PARTITION BY DATE(date) \
+                  CLUSTER BY movie_id AS \
+                  SELECT * FROM {BIGQUERY_DATASET}.external_{table};"
+            )
 
+            bq_optimize_table_task = BigQueryInsertJobOperator(
+                task_id=f"bq_create_optimized_{table}",
+                configuration={
+                    "query": {
+                        "query": CREATE_BQ_TBL_QUERY,
+                        "useLegacySql": False,
+                    }
+                }
+            )
 
-    # for parquet_file in ['combined_data_1', 'combined_data_2', 'combined_data_3', 'combined_data_4', 'movie_titles']:
-    #    bigquery_external_table_task = BigQueryCreateExternalTableOperator(  # extract schema and create BigQuery Table
-    #         task_id=f"bigquery_external_{parquet_file}",
-    #         table_resource={
-    #             "externalDataConfiguration": {
-    #                 "sourceFormat": "PARQUET",
-    #                 "sourceUris": [f"gs://{BUCKET}/de_project/{parquet_file}.parquet"],
-    #             },
-    #             "tableReference": {
-    #                 "projectId": PROJECT_ID,
-    #                 "datasetId": BIGQUERY_DATASET,
-    #                 "tableId": f"external_{parquet_file}",
-    #             },
-    #         },
-    #     )
-
-
-
-kaggle_download >> to_csv >> to_parquet >> clear_space >> load_to_gcs >> external_tables
+kaggle_download >> to_csv >> to_parquet >> [clear_space, load_to_gcs] >> external_tables >> optimize_tables
 
 # docker exec -it de_airflow_airflow-worker_1 bash
 # airflow tasks test upload_to_gcs_dag kaggle_download 2022-03-01 && airflow tasks test upload_to_gcs_dag to_csv 2022-03-01

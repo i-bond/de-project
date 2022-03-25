@@ -32,7 +32,7 @@ jobs:
                   cd de-project
                   echo "Fetching the remote branch and moving it to origin/main"
                   git fetch origin main
-                  sudo git reset --hard origin/main
+                  git reset --hard origin/main
                   git status
 
                   echo "Updating Docker Containers"
@@ -41,6 +41,7 @@ jobs:
                   docker-compose build --build-arg ${{ secrets.NAME }} --build-arg ${{ secrets.KEY }}
                   sudo docker-compose up -d
                   echo "We are Up and Running!"
+
 
 #                  Provide in Terraform, json doesn't work as well as .env
 #                  # Add GCP credentials -
