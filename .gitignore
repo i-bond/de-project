@@ -36,7 +36,7 @@ terraform/
 
 # Do Not Ignore
 !requirements.txt
-
+!dashboard.png
 
 
 

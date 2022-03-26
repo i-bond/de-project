@@ -177,7 +177,7 @@ with DAG(
                 }
             )
 
-kaggle_download >> to_csv >> to_parquet >> [clear_space, load_to_gcs] >> external_tables >> optimize_tables
+kaggle_download >> to_csv >> to_parquet >> clear_space >> load_to_gcs >> external_tables >> optimize_tables
 
 # docker exec -it de_airflow_airflow-worker_1 bash
 # airflow tasks test upload_to_gcs_dag kaggle_download 2022-03-01 && airflow tasks test upload_to_gcs_dag to_csv 2022-03-01
