@@ -10,5 +10,15 @@ Project tech stack: Airflow (orchestration), dbt (T in ETL), GCP Platform (GCE, 
 **Dashboard link:**  
 https://datastudio.google.com/reporting/d5699e7f-8d3f-4d8f-b0ff-840d19083db9
 
+<details>
+<summary>Whatch out, spoilers ahead !!!</summary>
+<br>
+This is how you dropdown.
+</details>
+
+
+
+
+
 Detailed instructions on how to run this project are outlined [here](https://github.com/i-bond/de-project/blob/main/howto/howto.md)
 
