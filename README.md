@@ -1,5 +1,9 @@
 # de-project
 #
+Description:  
+In this project, we will create Infrastructure for Data Pipeline, automate ETL process with Airflow, make data transformations using dbt and create a dashboard discovering Netflix movies, one of Kaggle datasets.
+
+
 
 
 Dashboard link:  
