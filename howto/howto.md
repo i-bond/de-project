@@ -26,7 +26,7 @@ sudo apt-get install docker.io
 [https://docs.docker.com/compose/install/](https://docs.docker.com/compose/install/)
 ```
 
-Configure SSH connection with Github (Forked Repo)
+Configure SSH connection with Github (Forked Repo)  
 Move config to .ssh folder as well as generated pub/private keys for auto authentication
 ```
 ssh-keyscan github.com >> /home/ubuntu/.ssh/known_hosts
