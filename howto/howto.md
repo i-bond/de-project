@@ -7,7 +7,7 @@
 * Add NAME, KEY to [Github Secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets)  
 
 **1. Create Private keys, change terraform files (vars.tf)**  
-**2. Creating Infrastructure - substitute vatiables in vars.tf and run Terraform commands**
+**2. Create Infrastructure - substitute vatiables in vars.tf and run Terraform commands**
 ```
 cd de-project/terraform
 terraform init
