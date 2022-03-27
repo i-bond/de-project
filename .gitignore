@@ -34,9 +34,13 @@ commands.py
 # Terraform
 terraform/
 
+
+# Description
+logos/
+
 # Do Not Ignore
 !requirements.txt
 !dashboard.png
-
+!project_stack.png
 
 
