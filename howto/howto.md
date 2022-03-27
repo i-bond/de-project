@@ -6,7 +6,7 @@
 * Get creds JSON from kaggle to use [API methods](https://www.kaggle.com/docs/api) 
 * Add NAME, KEY to [Github Secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets)  
 
-**1. Create Private keys, change terraform files (vars.tf)**
+**1. Create Private keys, change terraform files (vars.tf)**  
 **2. Creating Infrastructure - substitute vatiables in vars.tf and run Terraform commands**
 ```
 cd de-project/terraform
@@ -53,7 +53,7 @@ docker-compose up airflow-init
 docker-compose up
 ```
 **5. Running DAGs**  
-Go to HOST:8080 and run the DAG
+Go to HOST:8080 and run the DAG  
 
 **6. Apply transformations in bdt (all models are stored in data_pipeline/dbt_transform/models/core)**
 ```
