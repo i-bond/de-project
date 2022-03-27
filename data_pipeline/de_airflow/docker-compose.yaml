@@ -66,16 +66,6 @@ x-airflow-common:
 #    GCP_GCS_BUCKET: "de_zoomcamp"
     GCP_GCS_BUCKET: "de_zoomcamp_test"
 
-
-
-
-    # set env vars for postgres, downloaded from .env
-#    PG_HOST: "${PG_HOST}"
-#    PG_USER: "${PG_USER}"
-#    PG_PASSWORD: "${PG_PASSWORD}"
-#    PG_PORT: "${PG_PORT}"
-#    PG_DATABASE: "${PG_DATABASE}"
-
   volumes:
   # local_path: container_path
     - ./dags:/opt/airflow/dags
