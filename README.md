@@ -13,7 +13,10 @@ https://datastudio.google.com/reporting/d5699e7f-8d3f-4d8f-b0ff-840d19083db9
 <details>
 <summary><b>Whatch out, spoilers ahead !!!</b></summary>
 <br>
-This is how you dropdown.
+[![Everything Is AWESOME](https://yt-embed.herokuapp.com/embed?v=StTqXEQ2l-Y)](https://coub.com/view/tz7kd "Everything Is AWESOME")
+
+  
+  
 </details>
 
 <div align="center">
