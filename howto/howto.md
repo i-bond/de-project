@@ -3,7 +3,7 @@
 ### Preliminary steps
 * Fork the Repo  
 * Create Service Acc, grant admin permissions (BigQuery Admin, Compute Admin, Storage Admin, Service Account User)  
-* Get creds JSON from kaggle to use [API methods]((https://www.kaggle.com/docs/api))  
+* Get creds JSON from kaggle to use [API methods](https://www.kaggle.com/docs/api) 
 * Add NAME, KEY to [Github Secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets)  
 
 1. Create Private keys, change terraform files (vars.tf)
@@ -36,8 +36,8 @@ ssh-add  ~/.ssh/de_zoomcamp
 ssh -T git@github.com
 ```
 
-git clone [git@github.com](mailto:git@github.com):<your_profile>/de-project.git
-Move .env and credentials with JSON to de-project/data_pipeline/de_airflow
+git clone [git@github.com](mailto:git@github.com):<your_profile>/de-project.git  
+Move .env and credentials with JSON to de-project/data_pipeline/de_airflow  
 
 4. Kick up Docker containers
 Grant permissions
