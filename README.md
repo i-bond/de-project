@@ -15,7 +15,7 @@ https://datastudio.google.com/reporting/d5699e7f-8d3f-4d8f-b0ff-840d19083db9
 <br>
 <a href="https://coub.com/view/tz7kd">
   <img alt="Qries" src="gandalf.jpg"
-  width="700" height="350">
+  width="800" height="400">
 </a>
 
   
