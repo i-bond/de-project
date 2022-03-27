@@ -13,15 +13,16 @@ https://datastudio.google.com/reporting/d5699e7f-8d3f-4d8f-b0ff-840d19083db9
 <details>
 <summary><b>Whatch out, spoilers ahead !!!</b></summary>
 <br>
-[![Everything Is AWESOME](https://yt-embed.herokuapp.com/embed?v=StTqXEQ2l-Y)](https://coub.com/view/tz7kd "Everything Is AWESOME")
+<a href="https://coub.com/view/tz7kd">
+  <img alt="Qries" src="gandalf.jpg"
+  width=150" height="70">
+</a>
 
   
   
 </details>
 
-<div align="center">
-  <a href="https://www.youtube.com/watch?v=ahU9dt0l4gQ"><img src="https://img.youtube.com/vi/ahU9dt0l4gQ/0.jpg" alt="IMAGE ALT TEXT"></a>
-</div>
+
 
 
 
