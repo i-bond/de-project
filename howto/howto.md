@@ -1,13 +1,16 @@
-# de-project
-#
-Description:  
-In this project, we will create Infrastructure for Data Pipeline, automate ETL process with Airflow, make data transformations using dbt and create a dashboard discovering Netflix movies, one of Kaggle datasets.
+# How to run the project
 
+Preliminary steps
+Fork the Repo
+Create Service Acc, grant admin permissions (BigQuery Admin, Compute Admin, Storage Admin, Service Account User)
+[Get creds](https://www.kaggle.com/docs/api) JSON from kaggle to use API methods
+Add NAME, KEY to [Github Secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets)
 
-
-
-Dashboard link:  
-https://datastudio.google.com/reporting/d5699e7f-8d3f-4d8f-b0ff-840d19083db9
-![Dashboard](dashboard.png)
-
-
+1. Create Private keys, change terraform files (vars.tf)
+2. Creating Infrastructure - substitute vatiables in vars.tf and run Terraform commands
+```
+cd de-project/terraform
+terraform init
+terraform plan
+terraform apply -auto-approve
+```
