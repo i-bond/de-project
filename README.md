@@ -11,7 +11,7 @@ Project tech stack: Airflow (orchestration), dbt (T in ETL), GCP Platform (GCE, 
 https://datastudio.google.com/reporting/d5699e7f-8d3f-4d8f-b0ff-840d19083db9
 
 <details>
-<summary>Whatch out, spoilers ahead !!!</summary>
+<summary><b>Whatch out, spoilers ahead !!!</b></summary>
 <br>
 This is how you dropdown.
 </details>
