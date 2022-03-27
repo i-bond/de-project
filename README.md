@@ -12,7 +12,8 @@ https://datastudio.google.com/reporting/d5699e7f-8d3f-4d8f-b0ff-840d19083db9
 
 <details>
 <summary><b>Whatch out, spoilers ahead !!!</b></summary>
-The Lord of the Rings, a series of three epic fantasy adventure films directed by Peter Jackson took over the Top Movies charts according to user ratings. 
+<br/>
+The Lord of the Rings, a series of three epic fantasy adventure films directed by Peter Jackson took over the Top Movies charts according to user ratings.<br/>
 While The Patriot, Miss congeniality and Pirates of the Caribbean are among the most voted ones.
 <br/>
 <a href="https://coub.com/view/tz7kd">
