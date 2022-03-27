@@ -63,7 +63,9 @@ x-airflow-common:
     GOOGLE_APPLICATION_CREDENTIALS: /.google/credentials/google_credentials.json
     AIRFLOW_CONN_GOOGLE_CLOUD_DEFAULT: 'google-cloud-platform://?extra__google_cloud_platform__key_path=/.google/credentials/google_credentials.json'
     GCP_PROJECT_ID: 'de-zoomcamp-10'
-    GCP_GCS_BUCKET: "de_zoomcamp"
+#    GCP_GCS_BUCKET: "de_zoomcamp"
+    GCP_GCS_BUCKET: "de_zoomcamp_test"
+
 
 
 

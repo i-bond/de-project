@@ -43,19 +43,6 @@ jobs:
                   echo "We are Up and Running!"
 
 
-#                  Provide in Terraform, json doesn't work as well as .env
-#                  # Add GCP credentials -
-#                  CRED_DIR=~/de-project/data_pipeline/de_airflow/credentials
-#                  if [ -d "$CRED_DIR" ]; then
-#                    echo "$CRED_DIR exists."
-#                  else
-#                    echo "$CRED_DIR does not exist, creating ..."
-#                    mkdir $CRED_DIR
-#                    echo "${{ secrets.GOOGLE_CREDENTIALS }}" > $CRED_DIR/google_credentials.json
-#                  fi
-
-
-
 
 
 

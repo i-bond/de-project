@@ -20,7 +20,7 @@ PROJECT_ID = os.environ.get("GCP_PROJECT_ID")
 BUCKET = os.environ.get("GCP_GCS_BUCKET")
 AIRFLOW_HOME = os.environ.get("AIRFLOW_HOME", "/opt/airflow/")
 KAGGLE_JSON = os.environ.get("KAGGLE_JSON")
-BIGQUERY_DATASET = os.environ.get("BIGQUERY_DATASET", 'netflix_dataset')
+BIGQUERY_DATASET = os.environ.get("BIGQUERY_DATASET", 'netflix_dataset_test')
 
 def convert_to_csv(path, files):
     for file in files:
