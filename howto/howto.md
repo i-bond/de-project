@@ -6,8 +6,8 @@
 * Get creds JSON from kaggle to use [API methods](https://www.kaggle.com/docs/api) 
 * Add NAME, KEY to [Github Secrets](https://docs.github.com/en/actions/security-guides/encrypted-secrets)  
 
-1. Create Private keys, change terraform files (vars.tf)
-2. Creating Infrastructure - substitute vatiables in vars.tf and run Terraform commands
+**1. Create Private keys, change terraform files (vars.tf)**
+**2. Creating Infrastructure - substitute vatiables in vars.tf and run Terraform commands**
 ```
 cd de-project/terraform
 terraform init
@@ -16,7 +16,7 @@ terraform apply -auto-approve
 ```
 This will create 6 resources and update/add HOST secret for GitHub repo  
 
-3. Setting up VM
+**3. Setting up VM**
 Connect via SSH using MobaXterm or other similar software
 Install docker and docker-compose
 ```
@@ -39,7 +39,7 @@ ssh -T git@github.com
 git clone [git@github.com](mailto:git@github.com):<your_profile>/de-project.git  
 Move .env and credentials with JSON to de-project/data_pipeline/de_airflow  
 
-4. Kick up Docker containers  
+**4. Kick up Docker containers**
 Grant permissions  
 ```
 sudo chown -R ubuntu ~/de-project
@@ -52,17 +52,17 @@ docker-compose build --build-arg NAME=<KAGGLE_NAME>--build-arg KEY=<KAGGLE_KEY>
 docker-compose up airflow-init
 docker-compose up
 ```
-5. Running DAGs  
+**5. Running DAGs**  
 Go to HOST:8080 and run the DAG
 
-6.Apply transformations in bdt (all models are stored in data_pipeline/dbt_transform/models/core)
+**6. Apply transformations in bdt (all models are stored in data_pipeline/dbt_transform/models/core)**
 ```
 dbt deps
 dbt run --select netflix_movies
 dbt run --select netflix_movies_final
 ```
 
-7. Plug in DataStudio and Play :)  
+**7. Plug in DataStudio and Play :)**  
 
 
 
