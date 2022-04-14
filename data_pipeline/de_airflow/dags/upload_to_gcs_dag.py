@@ -179,8 +179,9 @@ with DAG(
 
 kaggle_download >> to_csv >> to_parquet >> clear_space >> load_to_gcs >> external_tables >> optimize_tables
 
-# docker exec -it de_airflow_airflow-worker_1 bash
 # docker commit <containter_id> <container_tag>
+
+
 
 
 
