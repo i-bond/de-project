@@ -30,6 +30,7 @@ jobs:
           port: 22
           script: | # multi line script
                   ls
+                  # sudo chown -R ubuntu ~/de-project
                   cd de-project
                   echo "Fetching the remote branch and moving it to origin/main"
                   git fetch origin main
