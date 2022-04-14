@@ -12,7 +12,7 @@ RUN apt-get update -qq && apt-get install vim nano jq jo -qqq
 
 SHELL ["/bin/bash", "-o", "pipefail", "-e", "-u", "-x", "-c"]
 
-ARG CLOUD_SDK_VERSION=322.0.0
+ARG CLOUD_SDK_VERSION=369.0.0
 ENV GCLOUD_HOME=/home/google-cloud-sdk
 
 ENV PATH="${GCLOUD_HOME}/bin/:${PATH}"
@@ -30,6 +30,12 @@ RUN DOWNLOAD_URL="https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/goo
        --quiet \
     && rm -rf "${TMP_DIR}" \
     && gcloud --version
+
+# Installing gcloud beta commands / view installed
+# gcloud version
+# gcloud components install beta --quiet
+# gcloud components list --only-local-state
+# gcloud auth login --cred-file=$GOOGLE_APPLICATION_CREDENTIALS --project=de-zoomcamp-10
 
 
 # Kaggle JSON - create as root and grant access to all
@@ -52,6 +58,11 @@ USER $AIRFLOW_UID
 
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
+
+
+
+
+
 
 
 

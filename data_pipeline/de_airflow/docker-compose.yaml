@@ -65,6 +65,8 @@ x-airflow-common:
     GCP_PROJECT_ID: 'de-zoomcamp-10'
 #    GCP_GCS_BUCKET: "de_zoomcamp"
     GCP_GCS_BUCKET: "de_zoomcamp_test"
+    GCP_REGION: "us-east1"
+    GCP_ZONE: "us-east1-c"
 
   volumes:
   # local_path: container_path
