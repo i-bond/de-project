@@ -39,7 +39,7 @@ ssh -T git@github.com
 git clone [git@github.com](mailto:git@github.com):<your_profile>/de-project.git  
 Move .env and credentials with JSON to de-project/data_pipeline/de_airflow  
 
-**4. Kick up Docker containers**
+**4. Kick up Docker containers**  
 Grant permissions  
 ```
 sudo chown -R ubuntu ~/de-project
